@@ -10,8 +10,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Deploy Docker Image to Heroku App
+      - name: Debug directory content
         run: ls -R
+
+      - name: Deploy Docker Image to Heroku App
         uses: jctaveras/heroku-deploy@v3.1.0
         with:
           email: ${{ secrets.HEROKU_EMAIL }} 
