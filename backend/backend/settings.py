@@ -34,7 +34,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://0.0.0.0',
     os.getenv('CLIENT_URL')
 ]
-
+ 
 CORS_ALLOW_CREDENTIALS = True
 
 
