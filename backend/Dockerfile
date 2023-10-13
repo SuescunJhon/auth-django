@@ -8,5 +8,10 @@ RUN pip install -r requirements.txt
 COPY . /app
 WORKDIR /app
 
-COPY ./entrypoint.sh .
-ENTRYPOINT ["sh", "/app/entrypoint.sh"]
+RUN python manage.py makemigrations
+RUN python manage.py migrate --no-input
+RUN python manage.py collectstatic --no-input
+
+EXPOSE ${PORT}
+
+CMD ["sh", "-c", "gunicorn backend.wsgi:application --bind ${PORT}"]
