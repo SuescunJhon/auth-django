@@ -20,7 +20,7 @@ jobs:
           process_type: 'web' 
  
   front-build:
-    needs: python-build
+    needs: back-build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
