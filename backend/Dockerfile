@@ -10,4 +10,4 @@ COPY . /app
 
 EXPOSE ${PORT}
 
-CMD ["sh", "-c", "python manage.py makemigrations user_api && python manage.py migrate --no-input && python manage.py collectstatic --no-input && gunicorn backend.wsgi:application --bind ${PORT}"]
+CMD ["sh", "-c", "python manage.py makemigrations user_api && python manage.py migrate --no-input && python manage.py collectstatic --no-input && gunicorn backend.wsgi:application --bind 0.0.0.0:${PORT}"]
