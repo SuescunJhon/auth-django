@@ -18,7 +18,7 @@ jobs:
           app_name: ${{ secrets.HEROKU_BACK_APP_NAME }} 
           dockerfile_path: '../../backend'
           process_type: 'web' 
-
+ 
   front-build:
     needs: python-build
     runs-on: ubuntu-latest
